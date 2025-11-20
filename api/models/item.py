@@ -1,11 +1,10 @@
 """Newsletter and item models"""
 from sqlalchemy import Column, String, Text, Date, Time, Integer, DECIMAL, Boolean, DateTime, ForeignKey, BIGINT
-from sqlalchemy.dialects.postgresql import UUID, ARRAY
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
-from api.database import Base
+from api.database import Base, UUID, ARRAY
 
 
 class Newsletter(Base):

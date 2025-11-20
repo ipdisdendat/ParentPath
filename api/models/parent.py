@@ -1,11 +1,11 @@
 """Parent and child models"""
 from sqlalchemy import Column, String, Integer, Boolean, Time, DECIMAL, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
 from api.database import Base
+from api.database import UUID
 
 
 class Parent(Base):

@@ -6,8 +6,11 @@ from typing import Optional
 class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
 
-    # Database
-    database_url: str = "postgresql+asyncpg://parentpath:parentpath_dev_2024@localhost:5432/parentpath"
+    # Database (SQLite default for zero setup, PostgreSQL for production)
+    database_url: str = "sqlite:///parentpath.db"
+
+    # Gemini Mode (CLI for free tier, API for production)
+    use_gemini_cli: bool = True
 
     # Redis
     redis_url: str = "redis://localhost:6379"
@@ -17,7 +20,7 @@ class Settings(BaseSettings):
     qdrant_api_key: Optional[str] = None
 
     # Gemini AI
-    gemini_api_key: str
+    gemini_api_key: Optional[str] = None
 
     # WhatsApp
     whatsapp_phone_id: Optional[str] = None
