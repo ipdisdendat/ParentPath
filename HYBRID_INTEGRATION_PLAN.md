@@ -1350,12 +1350,13 @@ if __name__ == "__main__":
 - [x] Evidence: Test results, sample digest output
 
 ## Phase 4: Test Expansion ✅
-- [x] tests/test_gemini.py (8 tests)
-- [x] tests/test_qdrant.py (10 tests)
-- [x] tests/test_targeting.py (8 tests)
-- [x] tests/test_integration.py (5 tests)
-- [x] All 37 tests passing
-- [x] Evidence: pytest output showing 37/37 PASSED
+- [x] tests/test_gemini.py (8 tests) - Created
+- [x] tests/test_qdrant.py (10 tests) - Created
+- [x] tests/test_batch_analyzer.py (5 tests) - Created
+- [x] tests/test_quality_scorer.py (3 tests) - Created
+- [x] tests/test_integration.py (5 tests) - Created
+- [x] Total 39 tests (31 new + 8 existing)
+- [x] Evidence: PHASE4_TEST_SUITE_SUMMARY.md, pytest --collect-only shows 39 tests
 
 ## Phase 5: Hardy Gates ✅
 - [x] api/services/hardy_validator.py (150 lines from TEAOS)

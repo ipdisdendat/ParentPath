@@ -1,11 +1,15 @@
 """Audit and points models"""
-from sqlalchemy import Column, String, Text, Integer, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID, JSONB
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, String, Text, Integer, DateTime, ForeignKey, JSON
 from datetime import datetime
 import uuid
 
-from api.database import Base
+from api.database import Base, UUID, IS_SQLITE
+
+# JSON type (JSONB for PostgreSQL, JSON for SQLite)
+if IS_SQLITE:
+    JSONB = JSON
+else:
+    from api.database import JSONB
 
 
 class AuditLog(Base):
@@ -19,7 +23,7 @@ class AuditLog(Base):
     actor_id = Column(UUID(as_uuid=True), nullable=True)
     actor_type = Column(String(20), nullable=True)  # parent, admin, system
     changes = Column(JSONB, nullable=True)  # before/after values
-    metadata = Column(JSONB, nullable=True)  # parser_version, confidence scores, etc.
+    extra_metadata = Column(JSONB, nullable=True)  # parser_version, confidence scores, etc. (renamed from 'metadata')
     created_at = Column(DateTime, default=datetime.utcnow)
 
     def __repr__(self):

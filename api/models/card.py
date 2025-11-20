@@ -1,11 +1,11 @@
 """Card model - personalized digest cards"""
 from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, UniqueConstraint
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
 from api.database import Base
+from api.database import UUID
 
 
 class Card(Base):

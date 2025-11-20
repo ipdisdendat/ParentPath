@@ -1,11 +1,10 @@
 """Ticket model - crowdsourced corrections"""
 from sqlalchemy import Column, String, Text, Integer, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
-from api.database import Base
+from api.database import Base, UUID, JSONB
 
 
 class Ticket(Base):

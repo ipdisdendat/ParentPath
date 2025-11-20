@@ -1,11 +1,11 @@
 """Message log model"""
 from sqlalchemy import Column, String, Text, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
 
 from api.database import Base
+from api.database import UUID
 
 
 class MessageLog(Base):
