@@ -67,7 +67,7 @@ Newsletter (PDF/Image)
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/yourusername/ParentPath.git
+git clone https://github.com/ipdisdendat/ParentPath.git
 cd ParentPath
 
 # Copy environment template
@@ -148,6 +148,27 @@ ParentPath/
 ├── requirements.txt            # Python dependencies
 └── README.md                   # This file
 ```
+
+---
+
+## 🚦 Current Status (Hackathon Reality Check)
+
+**Last Updated:** 2025-11-18
+
+- ✅ **FastAPI app, models, routers, and services implemented** (4,700 LOC)
+- ✅ **docker-compose defined** for Postgres, Redis, Qdrant, API
+- ✅ **Tests exist** for health + core flows (40 tests in `tests/`)
+- ✅ **Gemini + Qdrant integrations** implemented in code (configuration required)
+- 🟡 **End-to-end flow needs wiring** (upload → parse → digest → send)
+- 🟡 **WhatsApp/Twilio send path** partially implemented (webhooks exist, send function needs completion)
+- 🔴 **No production-grade auth or rate limiting** (hackathon/pilot use only)
+
+**Next Steps for Demo:**
+1. Configure Gemini API key + Qdrant instance (15 min)
+2. Test `/health` endpoint + verify services boot (30 min)
+3. Wire one complete flow: upload newsletter → generate digest (2-4 hours)
+
+See `MVP_ARCHITECTURE.md` for detailed implementation status.
 
 ---
 
@@ -311,6 +332,6 @@ MIT License - see `LICENSE` for details.
 
 ---
 
-**Status:** 🚧 MVP Development (Phase 0 Complete)
+**Status:** 🚧 MVP in active development – core services implemented, one end-to-end flow away from demo
 
 Built with ❤️ for educational equity
