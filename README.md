@@ -168,7 +168,7 @@ ParentPath/
 2. Test `/health` endpoint + verify services boot (30 min)
 3. Wire one complete flow: upload newsletter → generate digest (2-4 hours)
 
-See `MVP_ARCHITECTURE.md` for detailed implementation status.
+See `docs/MVP_ARCHITECTURE.md` for detailed implementation status.
 
 ---
 
